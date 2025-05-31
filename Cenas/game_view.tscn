@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://duxjj5pnyxsi6"]
+
+[ext_resource type="Texture2D" uid="uid://eyvbvc15n8wj" path="res://Recursos/background-day.png" id="1_84o8k"]
+[ext_resource type="Texture2D" uid="uid://bsukqi8hwh1h4" path="res://Recursos/gameover.png" id="2_xe7ju"]
+[ext_resource type="Texture2D" uid="uid://cbsvdbatpgpm1" path="res://Recursos/taptap.png" id="3_2jld2"]
+[ext_resource type="FontFile" uid="uid://sfsyxesikgmn" path="res://Recursos/Kenney Blocks.ttf" id="4_xihlh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mikag"]
+font = ExtResource("4_xihlh")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+
+[node name="GameView" type="Node2D"]
+
+[node name="LayerFundo" type="CanvasLayer" parent="."]
+
+[node name="BG" type="TextureRect" parent="LayerFundo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_84o8k")
+
+[node name="LayerUI" type="CanvasLayer" parent="."]
+
+[node name="GameOver" type="TextureRect" parent="LayerUI"]
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.25
+anchor_right = 0.833
+anchor_bottom = 0.332
+offset_left = -0.0960045
+offset_right = 0.0959778
+offset_bottom = 0.0159912
+texture = ExtResource("2_xe7ju")
+
+[node name="Tutorial" type="TextureRect" parent="LayerUI"]
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.25
+anchor_right = 0.833
+anchor_bottom = 0.463
+offset_left = 0.127998
+offset_right = 0.0959778
+offset_bottom = -0.056015
+texture = ExtResource("3_2jld2")
+
+[node name="Restart" type="Button" parent="LayerUI"]
+anchors_preset = -1
+anchor_left = 0.306
+anchor_top = 0.531
+anchor_right = 0.701
+anchor_bottom = 0.592
+offset_left = -0.128006
+offset_top = 0.127991
+offset_right = 0.111984
+offset_bottom = -0.104004
+text = "Restart Game"
+
+[node name="Score" type="Label" parent="LayerUI"]
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.125
+anchor_right = 0.556
+anchor_bottom = 0.201
+offset_left = -0.0960083
+offset_right = -0.128021
+offset_bottom = 0.0879974
+text = "0"
+label_settings = SubResource("LabelSettings_mikag")
+horizontal_alignment = 1
+vertical_alignment = 1
