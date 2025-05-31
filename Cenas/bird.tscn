@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ltp2b6p16iur"]
+
+[ext_resource type="Texture2D" uid="uid://cgxefv66het53" path="res://Recursos/yellowbird-downflap.png" id="1_x67vv"]
+[ext_resource type="Texture2D" uid="uid://cjxwt185hg4gw" path="res://Recursos/yellowbird-midflap.png" id="2_bsspx"]
+[ext_resource type="Texture2D" uid="uid://cwjpa68vkadjx" path="res://Recursos/yellowbird-upflap.png" id="3_pk8h4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x67vv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x67vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bsspx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pk8h4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bird" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x67vv")
+autoplay = "default"
+frame_progress = 0.890843
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, 3, 6, -11, -4, -11, -14, -3, -16, 5, -7, 11, 3, 11, 13, 9)

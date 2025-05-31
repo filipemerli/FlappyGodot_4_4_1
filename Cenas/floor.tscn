@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://4jlpuime3v5f"]
+
+[ext_resource type="Texture2D" uid="uid://dgmiehk38p7md" path="res://Recursos/base.png" id="1_3gy6y"]
+[ext_resource type="Shader" uid="uid://byi5qjn2sp6ud" path="res://Scripts/floor.gdshader" id="1_av4kb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdjpk"]
+shader = ExtResource("1_av4kb")
+shader_parameter/speed = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av4kb"]
+size = Vector2(336, 112)
+
+[node name="Floor" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mdjpk")
+texture = ExtResource("1_3gy6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_av4kb")

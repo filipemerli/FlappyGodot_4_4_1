@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://duxjj5pnyxsi6"]
+[gd_scene load_steps=8 format=3 uid="uid://duxjj5pnyxsi6"]
 
 [ext_resource type="Texture2D" uid="uid://eyvbvc15n8wj" path="res://Recursos/background-day.png" id="1_84o8k"]
 [ext_resource type="Texture2D" uid="uid://bsukqi8hwh1h4" path="res://Recursos/gameover.png" id="2_xe7ju"]
 [ext_resource type="Texture2D" uid="uid://cbsvdbatpgpm1" path="res://Recursos/taptap.png" id="3_2jld2"]
 [ext_resource type="FontFile" uid="uid://sfsyxesikgmn" path="res://Recursos/Kenney Blocks.ttf" id="4_xihlh"]
+[ext_resource type="PackedScene" uid="uid://ltp2b6p16iur" path="res://Cenas/bird.tscn" id="5_2jld2"]
+[ext_resource type="PackedScene" uid="uid://4jlpuime3v5f" path="res://Cenas/floor.tscn" id="6_xihlh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mikag"]
 font = ExtResource("4_xihlh")
@@ -14,6 +16,7 @@ outline_size = 7
 [node name="GameView" type="Node2D"]
 
 [node name="LayerFundo" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="BG" type="TextureRect" parent="LayerFundo"]
 anchors_preset = 15
@@ -42,33 +45,40 @@ anchor_left = 0.194
 anchor_top = 0.25
 anchor_right = 0.833
 anchor_bottom = 0.463
-offset_left = 0.127998
-offset_right = 0.0959778
+offset_left = -3.872
+offset_right = -3.90402
 offset_bottom = -0.056015
 texture = ExtResource("3_2jld2")
 
 [node name="Restart" type="Button" parent="LayerUI"]
 anchors_preset = -1
-anchor_left = 0.306
-anchor_top = 0.531
-anchor_right = 0.701
-anchor_bottom = 0.592
-offset_left = -0.128006
-offset_top = 0.127991
-offset_right = 0.111984
-offset_bottom = -0.104004
+anchor_left = 0.312
+anchor_top = 0.764
+anchor_right = 0.715
+anchor_bottom = 0.824
+offset_left = 0.143997
+offset_top = -0.16803
+offset_right = 0.0799866
+offset_bottom = 0.111969
+theme_override_constants/outline_size = 0
 text = "Restart Game"
 
 [node name="Score" type="Label" parent="LayerUI"]
 anchors_preset = -1
 anchor_left = 0.417
 anchor_top = 0.125
-anchor_right = 0.556
+anchor_right = 0.569
 anchor_bottom = 0.201
-offset_left = -0.0960083
-offset_right = -0.128021
+offset_left = 0.903992
+offset_right = 1.12799
 offset_bottom = 0.0879974
 text = "0"
 label_settings = SubResource("LabelSettings_mikag")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Bird" parent="." instance=ExtResource("5_2jld2")]
+position = Vector2(89, 277)
+
+[node name="Floor" parent="." instance=ExtResource("6_xihlh")]
+position = Vector2(143, 486)
