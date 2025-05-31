@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4jlpuime3v5f"]
+[gd_scene load_steps=6 format=3 uid="uid://4jlpuime3v5f"]
 
 [ext_resource type="Texture2D" uid="uid://dgmiehk38p7md" path="res://Recursos/base.png" id="1_3gy6y"]
 [ext_resource type="Shader" uid="uid://byi5qjn2sp6ud" path="res://Scripts/floor.gdshader" id="1_av4kb"]
+[ext_resource type="Script" uid="uid://byos57fix2ptg" path="res://Scripts/floor.gd" id="1_mdjpk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mdjpk"]
 shader = ExtResource("1_av4kb")
@@ -11,6 +12,7 @@ shader_parameter/speed = 0.5
 size = Vector2(336, 112)
 
 [node name="Floor" type="StaticBody2D"]
+script = ExtResource("1_mdjpk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
